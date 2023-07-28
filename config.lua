@@ -3,6 +3,7 @@
 -- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
+--
 
 -- Enable powershell as your default shell
 vim.opt.shell = "pwsh.exe"
@@ -29,7 +30,10 @@ vim.opt.cindent = true
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+
 lvim.colorscheme = 'kanagawa'
+
+lvim.format_on_save.enabled = true
 
 lvim.builtin.which_key.mappings["S"]= {
     name = "Session",
@@ -42,6 +46,15 @@ lvim.builtin.which_key.mappings["D"] = {
     name = "Dodument Generate",
     G = { "<cmd>DogeGenerate<cr>", "generate comment"}
 }
+
+--[[ lvim.builtin.lualine.sections = {
+    lualine_a = {'branch'},
+    lualine_b = {{'filename', file_status = true, newfile_status = true, path = 1}},
+    lualine_c = {{'diff', colored = true}},
+    lualine_x = {'diagnostics', 'encoding', 'fileformat', 'filetype', 'filesize'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+} ]]
 
 -- Set a compatible clipboard manager
 vim.g.clipboard = {
@@ -148,6 +161,9 @@ lvim.plugins = {
     },
     {
         "kkoomen/vim-doge",
+    },
+    {
+        "tpope/vim-surround"
     }
 
 }
