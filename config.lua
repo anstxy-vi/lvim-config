@@ -35,7 +35,7 @@ lvim.colorscheme = 'kanagawa'
 
 lvim.format_on_save.enabled = true
 
-lvim.builtin.which_key.mappings["S"]= {
+lvim.builtin.which_key.mappings["S"] = {
     name = "Session",
     c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
     l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
@@ -44,17 +44,17 @@ lvim.builtin.which_key.mappings["S"]= {
 
 lvim.builtin.which_key.mappings["D"] = {
     name = "Dodument Generate",
-    G = { "<cmd>DogeGenerate<cr>", "generate comment"}
+    G = { "<cmd>DogeGenerate<cr>", "generate comment" }
 }
 
---[[ lvim.builtin.lualine.sections = {
-    lualine_a = {'branch'},
-    lualine_b = {{'filename', file_status = true, newfile_status = true, path = 1}},
-    lualine_c = {{'diff', colored = true}},
-    lualine_x = {'diagnostics', 'encoding', 'fileformat', 'filetype', 'filesize'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-} ]]
+lvim.builtin.lualine.sections = {
+    lualine_a = { 'branch' },
+    lualine_b = { { 'filename', file_status = true, newfile_status = true, path = 1 } },
+    lualine_c = { { 'diff', colored = true } },
+    lualine_x = { 'diagnostics', 'encoding', 'fileformat', 'filetype', 'filesize' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
+}
 
 -- Set a compatible clipboard manager
 vim.g.clipboard = {
@@ -80,26 +80,26 @@ lvim.plugins = {
         "norcalli/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup({ "css", "less", "typescript", "tsx", "scss", "html", "javascript" }, {
-                RGB = true, -- #RGB hex codes
-                RRGGBB = true, -- #RRGGBB hex codes
+                RGB = true,      -- #RGB hex codes
+                RRGGBB = true,   -- #RRGGBB hex codes
                 RRGGBBAA = true, -- #RRGGBBAA hex codes
-                rgb_fn = true, -- CSS rgb() and rgba() functions
-                hsl_fn = true, -- CSS hsl() and hsla() functions
-                css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-                css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+                rgb_fn = true,   -- CSS rgb() and rgba() functions
+                hsl_fn = true,   -- CSS hsl() and hsla() functions
+                css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+                css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
             })
         end,
     },
     {
         "ray-x/lsp_signature.nvim",
         event = "BufRead",
-        config = function() require"lsp_signature".on_attach() end,
+        config = function() require "lsp_signature".on_attach() end,
     },
     {
         "windwp/nvim-spectre",
         event = "BufRead",
         lazy = true,
-        cmd = { "Spectre" }, 
+        cmd = { "Spectre" },
         config = function()
             require("spectre").setup()
         end,
@@ -134,12 +134,12 @@ lvim.plugins = {
         "rmagatti/goto-preview",
         config = function()
             require('goto-preview').setup {
-                width = 120; -- Width of the floating window
-                height = 25; -- Height of the floating window
-                default_mappings = true; -- Bind default mappings
-                debug = false; -- Print debug information
-                opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
-                post_open_hook = nil; -- A function taking two arguments, a buffer and a window to be ran as a hook.
+                width = 120,             -- Width of the floating window
+                height = 25,             -- Height of the floating window
+                default_mappings = true, -- Bind default mappings
+                debug = false,           -- Print debug information
+                opacity = nil,           -- 0-100 opacity level of the floating window where 100 is fully transparent.
+                post_open_hook = nil,    -- A function taking two arguments, a buffer and a window to be ran as a hook.
                 -- You can use "default_mappings = true" setup option
                 -- Or explicitly set keybindings
                 -- vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>");
@@ -153,7 +153,7 @@ lvim.plugins = {
         dependencies = "nvim-treesitter/nvim-treesitter",
         config = true,
         -- Uncomment next line if you want to follow only stable versions
-        -- version = "*" 
+        -- version = "*"
 
     },
     {
